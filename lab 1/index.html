@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Image Description</title>
+</head>
+
+<body>
+
+    <section id="wraper">
+        <div id="card">
+            <img src="C:\Users\Mayar\OneDrive\Desktop\ITI\JQuery\lab 1\Images\img1.jpg" id="galaxy1">
+            <h3>Celestial 1</h5>
+                <p id="para1">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ipsa neque esse possimus ab ut
+                    ad vel nostrum,
+                    exercitationem velit veritatis atque voluptate quas ea quidem sint eum facere quisquam autem?</p>
+        </div>
+        <div id="card">
+            <img src="C:\Users\Mayar\OneDrive\Desktop\ITI\JQuery\lab 1\Images\img2.jpg" id="galaxy2">
+            <h3>Milky way</h5>
+                <p id="para2">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ipsa neque esse possimus ab ut
+                    ad vel nostrum,
+                    exercitationem velit veritatis atque voluptate quas ea quidem sint eum facere quisquam autem?</p>
+        </div>
+        <div id="card">
+            <img src="C:\Users\Mayar\OneDrive\Desktop\ITI\JQuery\lab 1\Images\img3.jpg" id="galaxy3">
+            <h3>Celestial 2</h5>
+                <p id="para3">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ipsa neque esse possimus ab ut
+                    ad vel nostrum,
+                    exercitationem velit veritatis atque voluptate quas ea quidem sint eum facere quisquam autem?</p>
+        </div>
+    </section>
+    <script src="https://code.jquery.com/jquery-3.6.1.js"
+        integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
+</body>
+
+<style>
+    #card {
+        display: flex;
+        flex-direction: column;
+        height: 600px;
+        width: 400px;
+        padding: 30px;
+    }
+
+    #wraper {
+        display: inline-flex;
+        justify-content: space-between;
+        flex-direction: row;
+    }
+
+    img {
+        width: 400px;
+        height: 200px;
+    }
+
+    p,
+    h3 {
+        text-align: center;
+    }
+
+    p {
+        background-color: lightblue;
+        display: none;
+    }
+</style>
+
+<script>
+    $("#galaxy1").on("click", function () {
+        $("#para1").slideToggle("slow");
+    });
+    $("#galaxy2").on("click", function () {
+        $("#para2").slideToggle("slow");
+    });
+    $("#galaxy3").on("click", function () {
+        $("#para3").slideToggle("slow");
+    });
+</script>
+
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Slider</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous" />
+</head>
+
+<body>
+    <div class="wrapper">
+        <div id="slider">
+            <ul id="images">
+                <li class="slide"> <img src="C:\Users\Mayar\OneDrive\Desktop\ITI\JQuery\lab 1\Images\img1.jpg"
+                        id="galaxy1">
+                </li>
+                <li class="slide"> <img src="C:\Users\Mayar\OneDrive\Desktop\ITI\JQuery\lab 1\Images\img2.jpg"
+                        id="galaxy2">
+                </li>
+                <li class="slide"> <img src="C:\Users\Mayar\OneDrive\Desktop\ITI\JQuery\lab 1\Images\img3.jpg"
+                        id="galaxy3">
+                </li>
+            </ul>
+        </div>
+        <button id="pause" class="btn btn-primary">Stop</button>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.1.js"
+        integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
+
+    <script>
+        var interval = setInterval(function () {
+            $('#images > li:first')
+                .fadeOut(2000)
+                .next()
+                .fadeIn(2000)
+                .end()
+                .appendTo('#images');
+        }, 3000);
+
+        $('#pause').on("click", function () {
+            clearInterval(interval);
+            alert("Sliding stopped!");
+        });
+    </script>
+
+</body>
+
+<style>
+    img {
+        width: 400px;
+        height: 200px;
+    }
+
+    .wrapper {
+        padding-top: 200px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        width: 400px;
+        height: 500px;
+        margin: auto;
+    }
+
+    #slider {
+        height: 200px;
+        overflow: hidden;
+    }
+
+    .slide {
+        list-style-type: none;
+    }
+</style>
+
+</html>
