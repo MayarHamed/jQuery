@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Black Hole</title>
+</head>
+
+<body>
+    <div class="blackHole">
+        <label>Black Hole</label>
+    </div>
+
+    <div id="draggable">
+        <label style="padding-bottom: 10px;">Drag me</label>
+        <img src="C:\Users\Mayar\OneDrive\Desktop\ITI\JQuery\lab 2\Depositphotos_81405258_m-2015.jpg">
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.1.js"
+        integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+
+</body>
+
+<style>
+    img {
+        width: 200px;
+        height: 130px;
+    }
+
+    #draggable {
+        display: flex;
+        flex-direction: column;
+        float: right;
+        background-color: lightgreen;
+        border-radius: 80%;
+        width: 300px;
+        padding: 30px;
+        align-items: center;
+        /* z-index: -1; */
+    }
+
+    .blackHole {
+        background-color: black;
+        border-radius: 80%;
+        height: 500px;
+        width: 500px;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        font-size: 50px;
+        color: white;
+        /* z-index: 2; */
+    }
+</style>
+
+<script>
+    $(function () {
+        $("#draggable").draggable();
+        $('#draggable').mouseenter(function () {
+            $("#draggable").effect("shake");
+        });
+        $(".blackHole").droppable({
+            drop: function (event, ui) {
+                // $("#draggable").css("display", 'none');
+                $("#draggable").fadeOut(500);
+            }
+        });
+
+    });
+
+</script>
+
+</html>
